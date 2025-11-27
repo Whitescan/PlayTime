@@ -1,13 +1,12 @@
 package me.f64.playtime.utils;
 
+import me.clip.placeholderapi.PlaceholderAPI;
 import me.f64.playtime.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Statistic;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
-import me.clip.placeholderapi.PlaceholderAPI;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 

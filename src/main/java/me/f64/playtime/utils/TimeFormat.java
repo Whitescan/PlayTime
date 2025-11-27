@@ -1,13 +1,12 @@
 package me.f64.playtime.utils;
 
+import me.f64.playtime.commands.Playtime;
+import org.bukkit.configuration.file.FileConfiguration;
+
 import java.lang.management.ManagementFactory;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.concurrent.TimeUnit;
-
-import org.bukkit.configuration.file.FileConfiguration;
-
-import me.f64.playtime.commands.Playtime;
 
 public class TimeFormat {
     public static String getTime(Duration duration) {

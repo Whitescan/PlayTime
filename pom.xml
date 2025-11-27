@@ -6,8 +6,11 @@
 
     <groupId>com.github.twi5ted</groupId>
     <artifactId>playtime</artifactId>
-    <version>3.7</version>
+    <version>3.7.1</version>
     <name>PlayTime</name>
+    <description>Playtime is a lightweight plugin that allows players to view their own or other players time played on
+        the server.
+    </description>
     <packaging>jar</packaging>
 
     <properties>
@@ -64,19 +67,31 @@
             <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
         </repository>
     </repositories>
-    
+
     <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/org.jetbrains/annotations -->
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>26.0.2</version>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
-            <version>2.11.1</version>
+            <version>2.11.7</version>
             <scope>provided</scope>
         </dependency>
+
     </dependencies>
+
 </project>

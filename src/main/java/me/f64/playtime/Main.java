@@ -1,11 +1,9 @@
 package me.f64.playtime;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.HashMap;
-
+import me.f64.playtime.commands.Playtime;
+import me.f64.playtime.placeholderapi.Expansion;
+import me.f64.playtime.utils.Chat;
+import me.f64.playtime.utils.UpdateChecker;
 import org.bukkit.Bukkit;
 import org.bukkit.Statistic;
 import org.bukkit.entity.Player;
@@ -19,10 +17,11 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import me.f64.playtime.commands.Playtime;
-import me.f64.playtime.placeholderapi.Expansion;
-import me.f64.playtime.utils.Chat;
-import me.f64.playtime.utils.UpdateChecker;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.HashMap;
 
 public class Main extends JavaPlugin implements Listener {
     public static Plugin plugin;

@@ -1,16 +1,10 @@
 package me.f64.playtime.commands;
 
-import java.io.File;
-import java.io.FileReader;
-import java.time.Duration;
-import java.time.temporal.ChronoUnit;
-import java.util.*;
-
 import me.f64.playtime.Main;
+import me.f64.playtime.utils.Chat;
 import me.f64.playtime.utils.ConfigWrapper;
 import me.f64.playtime.utils.TimeFormat;
 import me.f64.playtime.utils.TopPlayers;
-
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
@@ -19,7 +13,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.util.StringUtil;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import me.f64.playtime.utils.Chat;
+
+import java.io.File;
+import java.io.FileReader;
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
+import java.util.*;
 
 public class Playtime implements TabExecutor {
     static Main plugin;
@@ -41,7 +40,7 @@ public class Playtime implements TabExecutor {
                         + " %playtime_position% - shows the players current position\r\n"
                         + " %playtime_top_#_name% - shows the name of the top 10\r\n"
                         + " %playtime_top_#_time% - shows the time of the top 10\r\n"
-                        + " You can also use any other placeholder that PlaceholderAPI supports :) \r\n" + "");
+                        + " You can also use any other placeholder that PlaceholderAPI supports :) \r\n");
         FileConfiguration c = Playtime.config.getConfig();
         c.addDefault("time.second.enabled", true);
         c.addDefault("time.second.prefix", "s");
@@ -53,9 +52,9 @@ public class Playtime implements TabExecutor {
         c.addDefault("time.day.prefix", "d");
         c.addDefault("time.week.enabled", true);
         c.addDefault("time.week.prefix", "w");
-        c.addDefault("messages.no_permission", Arrays.asList("&8[&bPlayTime&8] &cYou don't have permission."));
+        c.addDefault("messages.no_permission", Collections.singletonList("&8[&bPlayTime&8] &cYou don't have permission."));
         c.addDefault("messages.doesnt_exist",
-                Arrays.asList("&8[&bPlayTime&8] &cPlayer %offlineplayer% has not joined before!"));
+                Collections.singletonList("&8[&bPlayTime&8] &cPlayer %offlineplayer% has not joined before!"));
         c.addDefault("messages.player", Arrays.asList("&b%playtime_player%'s Stats are:",
                 "&bPlayTime: &7%playtime_time%", "&bTimes Joined: &7%playtime_timesjoined%"));
         c.addDefault("messages.offline_players", Arrays.asList("&b%offlineplayer%'s Stats are:",
@@ -63,12 +62,12 @@ public class Playtime implements TabExecutor {
         c.addDefault("messages.other_players", Arrays.asList("&b%playtime_player%'s Stats are:",
                 "&bPlayTime: &7%playtime_time%", "&bTimes Joined: &7%playtime_timesjoined%"));
         c.addDefault("messages.playtimetop.header", Arrays.asList("&bTop &e10 &bplayers playtime:", ""));
-        c.addDefault("messages.playtimetop.message", Arrays.asList("&a%position%. &b%player%: &e%playtime%"));
-        c.addDefault("messages.playtimetop.footer", Arrays.asList(""));
+        c.addDefault("messages.playtimetop.message", Collections.singletonList("&a%position%. &b%player%: &e%playtime%"));
+        c.addDefault("messages.playtimetop.footer", Collections.singletonList(""));
         c.addDefault("messages.server_uptime",
-                Arrays.asList("&8[&bPlayTime&8] &bServer's total uptime is %playtime_serveruptime%"));
+                Collections.singletonList("&8[&bPlayTime&8] &bServer's total uptime is %playtime_serveruptime%"));
         c.addDefault("messages.reload_config",
-                Arrays.asList("&8[&bPlayTime&8] &bYou have successfully reloaded the config."));
+                Collections.singletonList("&8[&bPlayTime&8] &bYou have successfully reloaded the config."));
         c.addDefault("placeholder.top.name", "none");
         c.addDefault("placeholder.top.time", "-");
         c.options().copyDefaults(true);
